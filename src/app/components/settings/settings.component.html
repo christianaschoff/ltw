@@ -1,0 +1,63 @@
+<h1>Settings</h1>
+<mat-accordion multi="false">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Presets
+      </mat-panel-title>
+      <mat-panel-description>
+        Choose a suitable preset from a list
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div>
+      <div class="entireRow">
+
+        <mat-selection-list #ops (selectionChange)="handleSelection($event, ops.selectedOptions.selected)">
+          <mat-list-option *ngFor="let preset of presets" [value]="op">
+            {{preset.description}}
+          </mat-list-option>
+        </mat-selection-list>
+
+      </div>
+    </div>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Custom
+      </mat-panel-title>
+      <mat-panel-description>
+        Create custom timeslots (can base on presets)
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <h2>Presentation Timeslot:</h2>
+    <div class="entireRow">
+      <div class="sliderDisplay">
+        <mat-slider class="sliderElement" min="0" max="5400" step="5" value="{{tickPresentation$ | async}}" (change)="presentationChange($event.value)"
+          thumbLabel [displayWith]="formatSliderValue"></mat-slider>
+      </div>
+      <div class='timeDisplay'>{{tickPresentation$ | async | minuteSeconds}}</div>
+    </div>
+
+    <h2>Question & Answers Timeslot:</h2>
+    <div class="entireRow">
+      <div class="sliderDisplay">
+        <mat-slider class="sliderElement" min="0" max="5400" step="5" value="{{tickQaA$ | async}}" (change)="qaaChange($event.value)"
+          thumbLabel [displayWith]="formatSliderValue"></mat-slider>
+      </div>
+      <div class="timeDisplay">{{tickQaA$ | async | minuteSeconds}}</div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<div class="entireRow">
+  <div class='controls'>
+    <button mat-icon-button class="md-48 btn" (click)="onNoClick()">
+      <mat-icon>cancel</mat-icon>
+    </button>
+    <button mat-icon-button cdkFocusInitial class="md-48 btn" [mat-dialog-close]="gatherDataAndCloseDialog()">
+      <mat-icon>done</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+
+.displayRtl {
+  transform: scaleX(-1);
+}
+
+#timerDisplay {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+}
+
+.presentation {
+  color: darkgray;
+}
+
+.qanda {
+  color: #f44336;
+}
+
+.controls {
+  height:48px;
+  background-color: #202020;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+@media only screen and (max-width: 500px) {
+  .btn {
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.main{
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.controls {
+  flex-grow: 0;
+}
+
+.timer {
+  font-size: 30vw;
+}
+::ng-deep .mat-progress-bar-fill::after {
+  background-color: green;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+  background: #E4E8EB;
+}
+
+::ng-deep .mat-progress-bar {
+  border-radius: 2px;
+}
+
+
+::ng-deep .mat-progress-bar.mat-accent .mat-progress-bar-buffer {
+    background: #E4E8EB;
+  }
+
+::ng-deep .mat-progress-bar.mat-accent .mat-progress-bar-fill::after {
+  background-color: goldenrod;
+  }
+
+
+.progressbar {
+  height: 40px;
+}

@@ -1,0 +1,58 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b,
+.mat-expansion-panel-header,
+.mat-expansion-panel-content {
+    font-weight: 300 !important;
+}
+
+.entireRow {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.entireRow>* {
+    padding-right: 10px;
+}
+
+@media all {
+    .sliderDisplay {
+        flex: 0px;
+    }
+
+    .timeDisplay {
+        order: 2;
+        margin-top: 15px;
+    }
+
+    .sliderDisplay {
+        order: 1;
+    }
+
+    .sliderElement {
+        width: 100%;
+    }
+}
+
+.btn {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.controls {
+    width: 100%;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls {
+    flex-grow: 0;
+}

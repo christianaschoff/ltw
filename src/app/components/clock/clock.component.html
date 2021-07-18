@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <header [ngClass]="(this.displayRTL$ | async) ? 'displayRtl': ''">
+    <mat-progress-bar mode="determinate" value="{{percentage$ | async }}" id="progress" class="progressbar" color="{{progressColor$ | async}}"></mat-progress-bar>
+  </header>
+  <div id='timerDisplay' class='presentation main'  [ngClass]="(this.displayRTL$ | async) ? 'displayRtl': ''">
+    <div class='timer'>
+      {{tick$ | async | minuteSeconds}}
+    </div>
+  </div>
+
+  <footer class='controls'>
+    <button mat-icon-button color="accent" class="md-48 btn" (click)='start()'>
+      <mat-icon>play_arrow</mat-icon>
+    </button>
+    <button mat-icon-button color="accent" class="md-48 btn" (click)='pause()'>
+      <mat-icon>pause</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" class="md-48 btn" (click)='stop()'>
+      <mat-icon>refresh</mat-icon>
+    </button>
+    <button mat-icon-button color="accent" class="md-48 btn" (click)='settings()'>
+      <mat-icon>settings</mat-icon>
+    </button>
+    <button mat-icon-button color="accent" class="md-48 btn" (click)='swapDirection()'>
+      <mat-icon>swap_horiz</mat-icon>
+    </button>
+  </footer>
+</div>

@@ -1,0 +1,20 @@
+export enum STATE {
+  STOP, RUN, PAUSE
+}
+
+export enum PROGRESSCOLOR {
+  PRESENTATION,
+  PRESENTATION_WARNING,
+  QUESTIONSANDANSWERS
+}
+
+export enum TIMERDIRECTION {
+  PRESENTATION,
+  QUESTIONSANDANSWERS
+}
+
+export enum SOUND {
+  BEEP = 'tick',
+  WHISTLE = 'whistle',
+  BUTTON = 'button'
+}
