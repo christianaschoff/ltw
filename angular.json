@@ -92,6 +92,7 @@
             "assets": [
               "src/assets",
               "src/assets/favicon.png",
+              "src/manifest.webmanifest",
               "src/manifest.webmanifest"
             ]
           }
