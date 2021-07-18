@@ -82,7 +82,6 @@ pause() {
 }
 
 swapDirection() {
-  // console.log('swap', this.rtlViewDirection);
   this.rtlViewDirection = !this.rtlViewDirection;
   this.displayRTL$ = of(this.rtlViewDirection);
 
@@ -93,7 +92,6 @@ settings() {
    const dialogRef = this.settingsDialog.open(SettingsComponent, { width: '80%',
   data: { configuration: this.configuration } });
    dialogRef.afterClosed().subscribe(result => {
-      // this.configuration = result;
       if (result === undefined) {
       return;
       }
